@@ -14,10 +14,17 @@ import case6Before from '../../../assets/patients/3/6 לפני.png';
 import case6After from '../../../assets/patients/3/6 אחרי.png';
 import { appConfig } from '../../../Utils/AppConfig';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function ViralWarts() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="טיפול ביבלת ויראלית בכף הרגל | דורי רפאל"
+                description="אבחון וטיפול מקצועי ביבלות ויראליות (HPV) בכפות הרגליים והידיים בקליניקה של דורי רפאל בתל אביב בטכנולוגיית SWIFT."
+                keywords="יבלת ויראלית, טיפול ביבלת ויראלית, יבלת בכף הרגל, HPV ברגל, SWIFT יבלת ויראלית"
+                canonical="/treatments/viral"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">יבלות ויראליות – הסבר ומידע</h1>
                 <p className="treatment__subtitle">

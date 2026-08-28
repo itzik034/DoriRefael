@@ -1,9 +1,16 @@
 import patientImg from '../../../assets/patients/449f2400-c40c-409c-87ea-a2ba858151fc.jpg';
 import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function ClinicalPedicure() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="פדיקור רפואי קליני ושיקומי | דורי רפאל"
+                description="טיפולי פדיקור רפואי קליני ושיקומי ברמה הגבוהה ביותר בקליניקה פרטית ומאובזרת בתל אביב."
+                keywords="פדיקור רפואי קליני, פדיקור שיקומי, טיפול בכף הרגל תל אביב, דורי רפאל פדיקור"
+                canonical="/treatments/clinical"
+            />
             <header className="treatment__header">
                 <div className="treatment__header-content">
                     <h1 className="treatment__title">פדיקור רפואי קליני</h1>

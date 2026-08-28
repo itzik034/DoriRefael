@@ -1,10 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import '../Treatments/Treatment.css';
 import { appConfig } from '../../../Utils/AppConfig';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function DrySkinAndCracks() {
     return (
         <article className="treatment-page" dir="rtl">
+            <SEO
+                title="טיפול ביובש בעור ובסדקים בכפות הרגליים | דורי רפאל"
+                description="טיפול מקיף בעור יבש, קשה וסדוק בכפות הרגליים להחזרת הלחות, הרכות והנוחות בהליכה בקליניקה של דורי רפאל."
+                keywords="יובש בכפות הרגליים, סדקים בעקב, טיפול בעור יבש, עור סדוק ברגל"
+                canonical="/articles/dry-skin-and-cracks"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: עור יבש וסדקים עמוקים בכפות הרגליים</h1>
                 <p className="treatment__subtitle">

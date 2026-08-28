@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function Contact() {
     const [nameVal, setNameVal] = useState('');
@@ -33,6 +34,12 @@ export function Contact() {
 
     return (
         <div className="contact-page" dir="rtl">
+            <SEO
+                title="צור קשר | דורי רפאל - קליניקה לטיפולי כף רגל בתל אביב"
+                description="צרו קשר עם דורי רפאל לקביעת תור לייעוץ וטיפול פדיקור רפואי בקליניקה בתל אביב. טלפון ישיר: 050-826-6042."
+                keywords="צור קשר דורי רפאל, קביעת תור פדיקור רפואי, קליניקה בתל אביב, טלפון דורי רפאל"
+                canonical="/contact"
+            />
             <header className="contact__header">
                 <h1 className="contact__title">צור קשר</h1>
                 <p className="contact__subtitle">

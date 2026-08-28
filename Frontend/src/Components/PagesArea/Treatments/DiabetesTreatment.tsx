@@ -3,10 +3,17 @@ import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
 import './Treatment.css';
 import { appConfig } from '../../../Utils/AppConfig';
 import diabetesImg from '../../../assets/patients/רגל-סוכרתית.jpg';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function DiabetesTreatment() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="פדיקור רפואי מוסמך לחולי סוכרת | דורי רפאל"
+                description="טיפול מקצועי וזהיר בכף רגל סוכרתית למניעת סיבוכים, כיבים וזיהומים, על ידי פדיקוריסט רפואי מוסמך."
+                keywords="כף רגל סוכרתית, פדיקור לחולי סוכרת, טיפול בסוכרת כף רגל, דורי רפאל סוכרת"
+                canonical="/treatments/diabetes"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול פודיאטרי ופדיקור רפואי לחולי סוכרת</h1>
                 <p className="treatment__subtitle">

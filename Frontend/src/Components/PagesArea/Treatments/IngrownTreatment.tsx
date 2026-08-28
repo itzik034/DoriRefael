@@ -3,10 +3,17 @@ import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
 import ingrownAfter from '../../../assets/patients/shutterstock_1335239690-Small.jpg';
 import { appConfig } from '../../../Utils/AppConfig';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function IngrownTreatment() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="טיפול בציפורן חודרנית | דורי רפאל"
+                description="עזרה ראשונה וטיפול מקצועי בציפורן חודרנית להקלה מיידית בכאב וללא ניתוח בקליניקה בתל אביב."
+                keywords="ציפורן חודרנית, טיפול בציפורן חודרנית, הקלה בכאב ציפורן חודרנית, פדיקור רפואי ציפורן חודרנית"
+                canonical="/treatments/ingrown"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול בציפורן חודרנית</h1>
                 <p className="treatment__subtitle">

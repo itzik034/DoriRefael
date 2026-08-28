@@ -1,7 +1,8 @@
 import cors from "cors";
 import express from "express";
 import { appConfig } from "./utils/app-config";
-import { controller } from "./controller";
+import { controller } from "./controllers/controller";
+import { webhookController } from "./controllers/webhook-controller";
 import { errorsMiddleware } from "./middlewares/errors-middleware";
 
 class App {
@@ -10,10 +11,14 @@ class App {
         try {
             const server = express();
             server.use(cors());
-            server.use(express.json());
+
+            // Register routers
+            server.use(webhookController.router);
             server.use(controller.router);
             server.use(errorsMiddleware.routeNotFound);
             server.use(errorsMiddleware.catchAll);
+
+            server.use(express.json());
             server.listen(appConfig.port, () => console.log("Listening on http://localhost:" + appConfig.port));
         }
         catch (err: any) {

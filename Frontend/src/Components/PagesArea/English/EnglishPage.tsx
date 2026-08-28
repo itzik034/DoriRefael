@@ -1,9 +1,16 @@
 import './EnglishPage.css';
 import DoriProfile from '../../../assets/DoriProfile.webp';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function EnglishPage() {
     return (
         <div className="english-page" dir="ltr">
+            <SEO
+                title="Dori Refael | Clinical & Medical Pedicure Specialist Tel Aviv"
+                description="Dori Refael - Medical & Clinical Pedicure Specialist in Tel Aviv with over 20 years of experience in ingrown toenail, fungus, warts, and diabetic foot care."
+                keywords="Medical Pedicure Tel Aviv, Podiatry Tel Aviv, Dori Refael, Ingrown Toenail Treatment, Fungal Nail Care"
+                canonical="/en"
+            />
             <header className="english__header">
                 <div className="english__header-content">
                     <h1 className="english__title--name">Dori Refael</h1>

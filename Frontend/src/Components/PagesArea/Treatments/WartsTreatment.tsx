@@ -6,10 +6,17 @@ import footBefore from '../../../assets/patients/רומן רגל שמאל לפנ
 import footAfter from '../../../assets/patients/רומן רגל שמאל אחרי.jpg';
 import { appConfig } from '../../../Utils/AppConfig';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function WartsTreatment() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="טיפולי SWIFT ויבלות מכאניות | דורי רפאל"
+                description="אבחון וטיפול חדשני ביבלות ברגליים, בידיים ובמקומות אחרים בעור בטכנולוגיית SWIFT מתקדמת בקליניקה של דורי רפאל בתל אביב."
+                keywords="טיפול ביבלות, טכנולוגיית SWIFT, יבלות מכאניות, יבלות בכף הרגל, דורי רפאל SWIFT"
+                canonical="/treatments/warts"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">יבלות בכף הרגל – אבחון וטיפול מקצועי</h1>
                 <p className="treatment__subtitle">

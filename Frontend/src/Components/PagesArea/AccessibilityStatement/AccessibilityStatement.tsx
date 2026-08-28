@@ -1,10 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { appConfig } from "../../../Utils/AppConfig";
 import "./AccessibilityStatement.css";
+import { SEO } from "../../SharedArea/SEO/SEO";
 
 export function AccessibilityStatement() {
     return (
         <div className="AccessibilityStatement page-container" dir="rtl">
+            <SEO
+                title="הצהרת נגישות | דורי רפאל"
+                description="הצהרת הנגישות של אתר דורי רפאל - מידע על התאמות נגישות באתר ובקליניקה בהתאם לתקן WCAG 2.1 ברמת AA."
+                keywords="הצהרת נגישות, נגישות אתר, דורי רפאל נגישות"
+                canonical="/accessibility"
+            />
             <div className="accessibility-content">
                 <h1 className="page-title">הצהרת נגישות</h1>
                 

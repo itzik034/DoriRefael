@@ -3,10 +3,17 @@ import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
 import { appConfig } from '../../../Utils/AppConfig';
 import elderlyCouple from '../../../assets/patients/11f2b06c-9d80-4607-a148-436f1af87a14.jpg';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function ElderlyPedicure() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="פדיקור רפואי לבני גיל הזהב | דורי רפאל"
+                description="טיפולי כף רגל ייעודיים לבני ובנות גיל הזהב, לתחזוקה נכונה, הגנה על העור ונוחות מרבית בהליכה."
+                keywords="פדיקור לגיל הזהב, טיפול רגליים לקשישים, פדיקור רפואי מבוגרים, דורי רפאל גיל שלישי"
+                canonical="/treatments/elderly"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול פודיאטרי ופדיקור רפואי בגיל השלישי</h1>
                 <p className="treatment__subtitle">

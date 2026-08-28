@@ -1,11 +1,47 @@
+import { Helmet } from 'react-helmet-async';
 import { NavLink } from 'react-router-dom';
 import './Home.css';
 import DoriProfile from '../../../assets/DoriProfile.webp';
 import { appConfig } from '../../../Utils/AppConfig';
+import { SEO } from '../../SharedArea/SEO/SEO';
+
+const medicalBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalBusiness',
+    name: 'דורי רפאל',
+    url: 'https://dorirefael.co.il',
+    image: 'https://dorirefael.co.il/og-image.jpg',
+    telephone: '050-8266042',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'הגיבור האלמוני 50, יד אליהו',
+        addressLocality: 'תל אביב',
+        addressCountry: 'IL'
+    },
+    openingHoursSpecification: [
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+            opens: '09:00',
+            closes: '19:00'
+        }
+    ]
+};
 
 export function Home() {
     return (
         <div className="home" dir="rtl">
+            <SEO
+                title="דורי רפאל | פדיקור רפואי קליני ושיקומי בתל אביב"
+                description="דורי רפאל - מומחה כף רגל, פדיקור רפואי קליני ושיקומי בתל-אביב. מעל 20 שנות ניסיון בטיפול בציפורן חודרנית, פטרת עור וציפורניים, יבלות, כף רגל סוכרתית ועוד."
+                keywords="פדיקור רפואי, דורי רפאל, טיפול בכף הרגל תל אביב, ציפורן חודרנית, פטרת ציפורניים, יבלות, פדיקור סוכרתי, SWIFT"
+                canonical="/"
+            />
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(medicalBusinessSchema)}
+                </script>
+            </Helmet>
             {/* Hero Section */}
             <header className="home__hero">
                 <div className="home__hero-content">

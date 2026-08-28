@@ -6,10 +6,17 @@ import fungusSkin1 from '../../../assets/patients/fungus_skin_1.png';
 import fungusSkin2 from '../../../assets/patients/fungus_skin_2.png';
 import { appConfig } from '../../../Utils/AppConfig';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function FungusTreatment() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="טיפול בפטרת עור וציפורניים | דורי רפאל"
+                description="ניקוי, חיטוי וטיפול מקצועי בפטרת כף הרגל והציפורניים לשיפור האסתטיקה ובריאות כף הרגל בקליניקה בתל אביב."
+                keywords="פטרת ציפורניים, פטרת עור, טיפול בפטרת, ניקוי פטרת, פטרת כף הרגל"
+                canonical="/treatments/fungus"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">פטרת עור ופטרת ציפורניים בכפות הרגליים</h1>
                 <p className="treatment__subtitle">

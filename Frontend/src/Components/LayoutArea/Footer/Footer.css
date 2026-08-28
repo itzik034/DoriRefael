@@ -28,6 +28,10 @@
     margin-block-end: 0.5rem;
 }
 
+.footer__text_line_height{
+    line-height: 1.7;
+}
+
 .footer__link {
     color: #b0c4de;
     text-decoration: none;

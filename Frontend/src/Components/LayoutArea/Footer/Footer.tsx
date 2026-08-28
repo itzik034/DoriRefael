@@ -10,7 +10,7 @@ export function Footer() {
             <div className="footer__container">
                 <section className="footer__section">
                     <h3 className="footer__title">דורי רפאל - מרפאת מומחים</h3>
-                    <p className="footer__text">
+                    <p className="footer__text footer__text_line_height">
                         רפואה מתקדמת, ליווי צמוד, יחס אישי ודיסקרטיות מלאה לגברים.
                     </p>
                 </section>
@@ -19,7 +19,7 @@ export function Footer() {
                     <h3 className="footer__title">יצירת קשר</h3>
                     <address className="footer__address">
                         <p className="footer__text">כתובת: הגיבור האלמוני 50, יד אליהו, ת"א​</p>
-                        <p className="footer__text">טלפון: <a href="tel:0533531327" className="footer__link">050-8266042</a></p>
+                        <p className="footer__text">טלפון: <a href="tel:0508266042" className="footer__link">050-8266042</a></p>
                         <p className="footer__text">דוא"ל: <a href="mailto:office@dorirefael.co.il" className="footer__link">office@dorirefael.co.il</a></p>
                     </address>
                 </section>

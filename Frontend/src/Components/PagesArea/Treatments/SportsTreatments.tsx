@@ -2,10 +2,17 @@ import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
 import patientImg2 from '../../../assets/patients/shutterstock_479268232-Medium.jpg';
 import sportsInjuries from '../../../assets/patients/sports-injuries.jpg';
 import './Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function SportsTreatments() {
     return (
         <div className="treatment-page" dir="rtl">
+            <SEO
+                title="פדיקור רפואי לספורטאים וחיילים | דורי רפאל"
+                description="טיפולי כף רגל מותאמים במיוחד לספורטאים וחיילים החשופים לעומסים, שחיקה, ציפורן חודרנית, יבלות עומס ושלפוחיות."
+                keywords="פדיקור רפואי לספורטאים, טיפול רגליים לחיילים, עומס בכף הרגל, פציעות ספורט כף רגל"
+                canonical="/treatments/sports"
+            />
             <header className="treatment__header">
                 <div className="treatment__header-content">
                     <h1 className="treatment__title">טיפולים לחיילים וספורטאים</h1>

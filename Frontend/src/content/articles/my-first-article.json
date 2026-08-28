@@ -1,0 +1,11 @@
+{
+  "slug": "my-first-article",
+  "title": "מאמר בדיקה ראשון",
+  "description": "זהו תיאור מטא של המאמר",
+  "excerpt": "תקציר קצר של המאמר",
+  "image": "https://example.com/image.jpg",
+  "publishedAt": "2026-08-28T20:00:00Z",
+  "schema": "{}",
+  "faq": "[]",
+  "html": "<h1>כותרת המאמר</h1><p>תוכן המאמר ב-HTML</p>"
+}

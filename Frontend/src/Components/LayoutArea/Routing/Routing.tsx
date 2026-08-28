@@ -1,4 +1,6 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
+import type { RouteRecord } from "vite-react-ssg";
+import { Layout } from "../Layout/Layout";
 import { Home } from "../../PagesArea/Home/Home";
 import { Page404 } from "../../PagesArea/Page404/Page404";
 import { About } from "../../PagesArea/About/About";
@@ -19,62 +21,76 @@ import { ViralWarts } from "../../PagesArea/Treatments/ViralWarts";
 import { appConfig } from "../../../Utils/AppConfig";
 import { AccessibilityStatement } from "../../PagesArea/AccessibilityStatement/AccessibilityStatement";
 
+export const routes: RouteRecord[] = [
+    {
+        path: appConfig.baseUrl + "/",
+        element: <Layout />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "home", element: <Navigate to={appConfig.baseUrl + "/"} replace /> },
+            { path: "עמוד-בית", element: <Navigate to={appConfig.baseUrl + "/"} replace /> },
+            
+            { path: "accessibility", element: <AccessibilityStatement /> },
+            { path: "הצהרת-נגישות", element: <AccessibilityStatement /> },
+            { path: "הצהרת-נגישות/", element: <AccessibilityStatement /> },
+            
+            { path: "about", element: <About /> },
+            { path: "אודות", element: <About /> },
+            
+            { path: "en", element: <EnglishPage /> },
+            { path: "english-2", element: <EnglishPage /> },
+            
+            { path: "reviews", element: <Reviews /> },
+            { path: "ביקורות", element: <Reviews /> },
+            
+            { path: "contact", element: <Contact /> },
+            { path: "צור-קשר", element: <Contact /> },
+            { path: "אשמח-לדעתך", element: <Contact /> },
+
+            { path: "treatments/warts", element: <WartsTreatment /> },
+            { path: "טיפולים/יבלות-מכאניות", element: <WartsTreatment /> },
+            { path: "טיפולים/יבלות-מכאניות/", element: <WartsTreatment /> },
+
+            { path: "treatments/diabetes", element: <DiabetesTreatment /> },
+            { path: "טיפולים/פדיקור-רפואי-מבוקר-ומוסמך-בחולי-סוכרת", element: <DiabetesTreatment /> },
+            { path: "טיפולים/פדיקור-רפואי-מבוקר-ומוסמך-בחולי-סוכרת/", element: <DiabetesTreatment /> },
+            
+            { path: "treatments/ingrown", element: <IngrownTreatment /> },
+            { path: "טיפולים/ציפורן-חודרנית", element: <IngrownTreatment /> },
+            { path: "טיפולים/ציפורן-חודרנית/", element: <IngrownTreatment /> },
+            
+            { path: "treatments/elderly", element: <ElderlyPedicure /> },
+            { path: "טיפולים/טיפול-בגבר-המבוגר", element: <ElderlyPedicure /> },
+            { path: "טיפולים/טיפול-בגבר-המבוגר/", element: <ElderlyPedicure /> },
+            
+            { path: "treatments/clinical", element: <ClinicalPedicure /> },
+            
+            { path: "treatments/sports", element: <SportsTreatments /> },
+            { path: "טיפולים/פדיקור-רפואי-לשיקום-פציעות-ספורט", element: <SportsTreatments /> },
+            { path: "טיפולים/פדיקור-רפואי-לשיקום-פציעות-ספורט/", element: <SportsTreatments /> },
+            
+            { path: "treatments/fungus", element: <FungusTreatment /> },
+            { path: "טיפולים/פטרת-עור-וציפורניים", element: <FungusTreatment /> },
+            { path: "טיפולים/פטרת-עור-וציפורניים/", element: <FungusTreatment /> },
+            
+            { path: "treatments/viral", element: <ViralWarts /> },
+            { path: "טיפולים/יבלת-ויראלית", element: <ViralWarts /> },
+            { path: "טיפולים/יבלת-ויראלית/", element: <ViralWarts /> },
+            
+            { path: "articles/viral-vs-mechanical", element: <ViralVsMechanicalWarts /> },
+            
+            { path: "articles/dry-skin-and-cracks", element: <DrySkinAndCracks /> },
+            { path: "טיפולים/יובש-בעור-כפות-הרגליים", element: <DrySkinAndCracks /> },
+            { path: "טיפולים/יובש-בעור-כפות-הרגליים/", element: <DrySkinAndCracks /> },
+            
+            { path: "articles/athletes-load-rehabilitation", element: <AthletesLoadRehabilitation /> },
+            
+            { path: "*", element: <Page404 /> }
+        ]
+    }
+];
+
 export function Routing() {
-    return (
-        <Routes>
-            <Route path={appConfig.baseUrl + "/"} element={<Home />} />
-            <Route path={appConfig.baseUrl + "/home"} element={<Navigate to={appConfig.baseUrl + "/"} />} />
-            <Route path={appConfig.baseUrl + "/עמוד-בית"} element={<Navigate to={appConfig.baseUrl + "/"} />} />
-            
-            <Route path={appConfig.baseUrl + "/accessibility"} element={<AccessibilityStatement />} />
-            <Route path={appConfig.baseUrl + "/הצהרת-נגישות/"} element={<AccessibilityStatement />} />
-            
-            <Route path={appConfig.baseUrl + "/about"} element={<About />} />
-            <Route path={appConfig.baseUrl + "/אודות"} element={<About />} />
-            
-            <Route path={appConfig.baseUrl + "/en"} element={<EnglishPage />} />
-            <Route path={appConfig.baseUrl + "/english-2"} element={<EnglishPage />} />
-            
-            <Route path={appConfig.baseUrl + "/reviews"} element={<Reviews />} />
-            <Route path={appConfig.baseUrl + "/ביקורות"} element={<Reviews />} />
-            
-            <Route path={appConfig.baseUrl + "/contact"} element={<Contact />} />
-            <Route path={appConfig.baseUrl + "/צור-קשר"} element={<Contact />} />
-            <Route path={appConfig.baseUrl + "/אשמח-לדעתך"} element={<Contact />} />
-
-
-            <Route path={appConfig.baseUrl + "/treatments/warts"} element={<WartsTreatment />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/יבלות-מכאניות/"} element={<WartsTreatment />} />
-
-            <Route path={appConfig.baseUrl + "/treatments/diabetes"} element={<DiabetesTreatment />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/פדיקור-רפואי-מבוקר-ומוסמך-בחולי-סוכרת/"} element={<DiabetesTreatment />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/ingrown"} element={<IngrownTreatment />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/ציפורן-חודרנית/"} element={<IngrownTreatment />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/elderly"} element={<ElderlyPedicure />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/טיפול-בגבר-המבוגר/"} element={<ElderlyPedicure />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/clinical"} element={<ClinicalPedicure />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/sports"} element={<SportsTreatments />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/פדיקור-רפואי-לשיקום-פציעות-ספורט/"} element={<SportsTreatments />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/fungus"} element={<FungusTreatment />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/פטרת-עור-וציפורניים/"} element={<FungusTreatment />} />
-            
-            <Route path={appConfig.baseUrl + "/treatments/viral"} element={<ViralWarts />} />
-            
-            <Route path={appConfig.baseUrl + "/articles/viral-vs-mechanical"} element={<ViralVsMechanicalWarts />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/יבלות-מכאניות/"} element={<ViralVsMechanicalWarts />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/יבלת-ויראלית/"} element={<ViralVsMechanicalWarts />} />
-            
-            <Route path={appConfig.baseUrl + "/articles/dry-skin-and-cracks"} element={<DrySkinAndCracks />} />
-            <Route path={appConfig.baseUrl + "/טיפולים/יובש-בעור-כפות-הרגליים/"} element={<DrySkinAndCracks />} />
-            
-            <Route path={appConfig.baseUrl + "/articles/athletes-load-rehabilitation"} element={<AthletesLoadRehabilitation />} />
-            
-            <Route path={appConfig.baseUrl + "*"} element={<Page404 />} />
-        </Routes>
-    );
+    return useRoutes(routes);
 }
+

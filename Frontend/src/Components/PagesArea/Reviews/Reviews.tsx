@@ -1,4 +1,5 @@
 import './Reviews.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 interface Review {
     id: number;
@@ -75,6 +76,12 @@ const youtubeVideos = [
 export function Reviews() {
     return (
         <div className="reviews-page" dir="rtl">
+            <SEO
+                title="המלצות וביקורות מטופלים | דורי רפאל"
+                description="קראו חוות דעת, המלצות וביקורות של מטופלים על טיפולי פדיקור רפואי, ציפורן חודרנית, טיפולי SWIFT ופטרת אצל דורי רפאל."
+                keywords="ביקורות דורי רפאל, המלצות פדיקור רפואי, חוות דעת פדיקוריסט, המלצות טיפול ביבלות"
+                canonical="/reviews"
+            />
             <header className="reviews__header">
                 <h1 className="reviews__title">המלצות המטופלים</h1>
                 <p className="reviews__subtitle">

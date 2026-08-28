@@ -1,10 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import '../Treatments/Treatment.css';
 import { appConfig } from '../../../Utils/AppConfig';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function ViralVsMechanicalWarts() {
     return (
         <article className="treatment-page" dir="rtl">
+            <SEO
+                title="יבלת מכאנית או ויראלית? המדריך המלא | דורי רפאל"
+                description="איך מבדילים בין יבלת מכאנית ליבלת ויראלית בכף הרגל? מדריך מקצועי מפורט מבית דורי רפאל לאבחון נכון וטיפול יעיל."
+                keywords="יבלת מכאנית, יבלת ויראלית, הבדל בין יבלות, מדריך יבלות, יבלת לחץ"
+                canonical="/articles/viral-vs-mechanical"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: מה ההבדל בין יבלת מכאנית ליבלת ויראלית?</h1>
                 <p className="treatment__subtitle">

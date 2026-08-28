@@ -2,10 +2,17 @@ import './About.css';
 import { ZoomableImage } from '../../SharedArea/ZoomableImage/ZoomableImage';
 import doriProfileImage from '../../../assets/DoriProfile.webp';
 import doriDegreeImage from '../../../assets/Dori_Degree.jpeg';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function About() {
     return (
         <div className="about-page" dir="rtl">
+            <SEO
+                title="אודות דורי רפאל | מומחה פדיקור רפואי קליני בתל אביב"
+                description="למדו על דורי רפאל, מומחה לטיפולי כף רגל ופדיקור רפואי קליני ושיקומי בתל אביב עם מעל 20 שנות ניסיון מקצועי."
+                keywords="אודות דורי רפאל, פדיקוריסט רפואי תל אביב, מומחה כף רגל, הכשרה פודיאטריה"
+                canonical="/about"
+            />
             <div className="about__container">
                 <header className="about__header">
                     <h1 className="about__title">אודות דורי רפאל</h1>

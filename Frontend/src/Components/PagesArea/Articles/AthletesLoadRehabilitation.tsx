@@ -1,10 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { appConfig } from '../../../Utils/AppConfig';
 import '../Treatments/Treatment.css';
+import { SEO } from '../../SharedArea/SEO/SEO';
 
 export function AthletesLoadRehabilitation() {
     return (
         <article className="treatment-page" dir="rtl">
+            <SEO
+                title="שיקום עומסים בכף הרגל לספורטאים | דורי רפאל"
+                description="מאמר מקצועי על שיקום עומסים, פציעות ספורט ושחיקה בכפות הרגליים אצל ספורטאים וחיילים מבית דורי רפאל."
+                keywords="שיקום עומסים, פציעות ספורט כף רגל, עומס ספורטאים, טיפול רגליים לחיילים"
+                canonical="/articles/athletes-load-rehabilitation"
+            />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: שיקום עומסים ופציעות ספורט בכפות הרגליים</h1>
                 <p className="treatment__subtitle">
