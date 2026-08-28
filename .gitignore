@@ -1,0 +1,10 @@
+.htaccess
+Z_start.bat
+dist
+Content
+node_modules
+public/videos
+Database
+start.bat
+Frontend/public/videos
+.env

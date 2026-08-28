@@ -1,0 +1,15 @@
+/* Override the default accessibility package position to force it to the right-center of the screen */
+._access-icon {
+    right: 24px !important;
+    left: auto !important;
+    top: 100px !important;
+    bottom: auto !important;
+}
+
+/* Match the exact padding of the WhatsApp button on mobile */
+@media (max-width: 768px) {
+    ._access-icon {
+        right: 16px !important;
+        left: auto !important;
+    }
+}

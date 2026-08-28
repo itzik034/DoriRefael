@@ -1,0 +1,101 @@
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Adjusting for header/footer */
+    padding: 2rem;
+    background-color: var(--color-slate);
+    font-family: var(--font-family);
+    direction: rtl;
+}
+
+.page-404__content {
+    background-color: var(--color-white);
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 31, 63, 0.08);
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn404 0.8s ease-out forwards;
+    border-top: 4px solid var(--color-steel-blue);
+}
+
+.page-404__title {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 0;
+    line-height: 1;
+    text-shadow: 4px 4px 0px rgba(70, 130, 180, 0.1);
+    letter-spacing: 4px;
+}
+
+.page-404__subtitle {
+    font-size: 2.2rem;
+    color: var(--color-steel-blue);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.page-404__text {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.page-404__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--color-steel-blue);
+    color: var(--color-white);
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(70, 130, 180, 0.25);
+}
+
+.page-404__btn:hover,
+.page-404__btn:focus {
+    background-color: var(--color-steel-blue-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(70, 130, 180, 0.35);
+    color: var(--color-white);
+}
+
+.page-404__btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(70, 130, 180, 0.2);
+}
+
+@keyframes fadeIn404 {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-404__content {
+        padding: 3rem 1.5rem;
+    }
+    .page-404__title {
+        font-size: 6rem;
+    }
+    .page-404__subtitle {
+        font-size: 1.8rem;
+    }
+    .page-404__text {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,606 @@
+/* Variables for Premium Executive Medical Clinic Theme */
+:root {
+    --color-navy: #001f3f;
+    /* Deep Navy Blue (Authority) */
+    --color-white: #ffffff;
+    /* Crisp White */
+    --color-slate: #f4f6f8;
+    /* Soft Slate (Cleanliness) */
+    --color-steel-blue: #4682b4;
+    /* Steel Blue (Accents/Buttons) */
+    --color-steel-blue-hover: #3a6b94;
+    --color-text-main: #333333;
+    --color-text-light: #555555;
+    --color-gray-bg: #eef2f5;
+
+    --font-family: 'David', 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Base styles within the component scope */
+.home {
+    font-family: var(--font-family);
+    color: var(--color-text-main);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
+
+/* Typography Utility */
+.home__section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-block-end: var(--spacing-md);
+    text-align: center;
+    padding-left: 20px;
+}
+
+/* Hero Section */
+.home__hero {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.82)), url('../../../assets/clinic_hero_3.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+    padding-block: var(--spacing-xl);
+    padding-inline: var(--spacing-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home__hero-content {
+    max-width: 800px;
+}
+
+.home__hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-block-end: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.home__hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-white);
+    margin-block-end: var(--spacing-md);
+    font-weight: 400;
+}
+
+.home__hero-since {
+    color: #00ffa2ff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Call to Action Button */
+.home__cta-btn {
+    background-color: var(--color-steel-blue);
+    color: var(--color-white);
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-height: 48px;
+    /* Touch target accessibility */
+    min-width: 48px;
+    text-decoration: none;
+}
+
+.home__cta-btn:hover,
+.home__cta-btn:focus {
+    background-color: var(--color-steel-blue-hover);
+    transform: translateY(-2px);
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+    text-decoration: underline;
+}
+
+/* Trust Bar Section */
+.home__trust-bar {
+    background-color: var(--color-slate);
+    padding-block: var(--spacing-md);
+    padding-inline: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    justify-items: start;
+    padding-inline-start: 1.5rem; /* Give some offset so it looks centered but aligned */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.home__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.home__trust-icon {
+    color: var(--color-steel-blue);
+    font-weight: 900;
+}
+
+/* Overview Section - Bento Box Design */
+.home__bento-overview {
+    padding-block: var(--spacing-xl);
+    padding-inline: var(--spacing-md);
+    background-color: var(--color-gray-bg);
+}
+
+.home__bento-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.home__profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--color-steel-blue);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.home__bento-title {
+    font-size: 2.2rem;
+    color: var(--color-navy);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.home__bento-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-steel-blue);
+    font-weight: 600;
+}
+
+.home__bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.home__bento-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .home__bento-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.home__bento-card {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.04);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    border: 1px solid rgba(0, 31, 63, 0.05);
+    display: block;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.home__bento-card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Staggered animation delays */
+.home__bento-column:first-child .home__bento-card:nth-child(1) { animation-delay: 0.1s; }
+.home__bento-column:first-child .home__bento-card:nth-child(2) { animation-delay: 0.3s; }
+.home__bento-column:last-child .home__bento-card:nth-child(1) { animation-delay: 0.2s; }
+.home__bento-column:last-child .home__bento-card:nth-child(2) { animation-delay: 0.4s; }
+
+.home__bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 31, 63, 0.08);
+}
+
+.home__bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--color-steel-blue);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.home__bento-card:hover::before {
+    opacity: 1;
+}
+
+.home__bento-icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+    background: rgba(70, 130, 180, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+    float: left;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+.home__bento-text-content {
+    display: block;
+    padding-top: 0.4rem; /* Perfectly aligns the first line of text with the icon */
+}
+
+.home__bento-text-content > :first-child {
+    margin-top: 0; /* Override any native browser margins */
+}
+
+.home__bento-card p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 1.25rem;
+}
+
+.home__bento-card p:last-child {
+    margin-bottom: 0;
+}
+
+.home__bento-problems h4 {
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.home__bento-problems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.home__bento-problems li {
+    position: relative;
+    padding-inline-start: 2rem;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+
+.home__bento-problems li:hover {
+    transform: translateX(-5px); /* Note: RTL shift left */
+}
+
+.home__bento-problems li::before {
+    content: '✓';
+    position: absolute;
+    inset-inline-start: 0;
+    top: -2px;
+    color: var(--color-white);
+    background: var(--color-steel-blue);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.home__bento-summary-highlight {
+    color: var(--color-navy);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.home__bento-alert strong {
+    color: var(--color-navy);
+}
+
+.home__bento-intro strong {
+    color: var(--color-navy);
+    font-size: 1.25rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Services Grid Section */
+.home__services {
+    background-color: var(--color-gray-bg);
+    padding-block: var(--spacing-lg);
+    padding-inline: var(--spacing-md);
+    text-align: center;
+    padding-top: 20px !important;
+}
+
+.home__services-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-navy);
+}
+
+.home__swift-banner-container {
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.swift-banner {
+    display: block;
+    text-decoration: none;
+    border: 4px solid var(--color-navy);
+    border-radius: 16px;
+    padding: 2.5rem;
+    background-color: #f9fcff;
+    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.15);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.swift-banner:hover {
+    transform: translateY(-5px);
+}
+
+.swift-banner__badge {
+    display: inline-block;
+    background-color: #e63946;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.swift-banner__title {
+    color: var(--color-navy);
+    font-size: 2.2rem;
+    margin: 0 0 1rem 0;
+}
+
+.swift-banner__desc {
+    color: var(--color-text-main);
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.home__services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.home__service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-subtle);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: start;
+    /* Supports RTL naturally */
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.home__service-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.home__service-title {
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin-block-end: 0.75rem;
+}
+
+.home__service-desc {
+    color: var(--color-text-light);
+}
+
+/* About Section */
+.home__about {
+    padding-block: var(--spacing-lg);
+    padding-inline: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.home__about-image-wrapper {
+    flex: 1;
+}
+
+.home__about-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    display: block;
+}
+
+.home__about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__about-content {
+    text-align: start;
+}
+
+.home__about-bio {
+    color: var(--color-text-light);
+    margin-block-end: 1rem;
+    font-size: 1.125rem;
+}
+
+/* Removed floating CTA CSS */
+
+/* Featured Service Card */
+.home__service-card--featured {
+    position: relative;
+    border: 2px solid var(--color-steel-blue);
+    background: linear-gradient(135deg, var(--color-white) 0%, #f4f8fb 100%);
+    box-shadow: 0 8px 24px rgba(70, 130, 180, 0.15);
+}
+
+.home__service-card--featured:hover {
+    box-shadow: 0 12px 32px rgba(70, 130, 180, 0.25);
+    transform: translateY(-5px);
+}
+
+.home__service-badge {
+    display: inline-block;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    align-self: center;
+    box-shadow: 0 4px 10px rgba(0, 31, 63, 0.2);
+}
+
+/* Responsive Breakpoints (Mobile First) */
+
+/* Tablet Portrait and Up */
+@media (min-width: 768px) {
+    .home__hero-title {
+        font-size: 3.5rem;
+    }
+
+    .home__hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .home__bento-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .home__bento-icon {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .home__bento-text-content {
+        flex: 1;
+    }
+
+    .home__trust-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        padding-block: var(--spacing-sm);
+    }
+
+    .home__services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .home__service-card--featured {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .home__service-badge {
+        align-self: flex-start;
+    }
+
+    .home__service-card--featured .home__service-title {
+        font-size: 2rem;
+    }
+
+    .home__service-card--featured .home__service-desc {
+        font-size: 1.15rem;
+        max-width: 800px;
+    }
+
+    .home__about {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+}

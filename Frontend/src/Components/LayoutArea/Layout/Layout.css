@@ -1,0 +1,12 @@
+/* Layout Wrapper CSS */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout__main {
+    flex: 1; /* Automatically pushes the footer to the bottom if content is short */
+    display: flex;
+    flex-direction: column;
+}

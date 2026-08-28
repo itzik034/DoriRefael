@@ -1,0 +1,48 @@
+
+
+/* src/styles/global.css */
+:root {
+  --color-navy: #001f3f; /* Deep Navy Blue (Authority) */
+  --color-white: #ffffff; /* Crisp White */
+  --color-slate: #f4f6f8; /* Soft Slate (Cleanliness) */
+  --color-steel-blue: #4682b4; /* Steel Blue (Accents/Buttons) */
+  --color-steel-blue-hover: #3a6b94;
+  --color-text-main: #333333;
+  --color-text-light: #555555;
+  --color-gray-bg: #eef2f5;
+  --color-dark-footer: #0a111a;
+  
+  --font-family: 'David', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* RTL Support */
+  text-align: start; /* Adapts to RTL */
+  font-family: var(--font-family);
+  background-color: var(--color-slate);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* WCAG 2.0 AA Compliant Global Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid var(--color-steel-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+  transition: outline 0.1s ease-in-out;
+}
