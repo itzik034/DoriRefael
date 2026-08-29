@@ -4,6 +4,7 @@ import { ArticleModel, ArticleSaveResult, BulkSaveResponse } from "../models/art
 import { ValidationError } from "../models/client-errors";
 import { appConfig } from "../utils/app-config";
 import { buildService } from "./build-service";
+import { imageDownloadService } from "./image-download-service";
 
 class ArticleService {
 
@@ -21,6 +22,9 @@ class ArticleService {
         if (exists) {
             throw new ValidationError(`An article with slug '${article.slug}' already exists. Please choose a different slug.`);
         }
+
+        // Download and organize external images locally before saving
+        await imageDownloadService.processArticleImages(article);
 
         await fs.writeFile(filePath, JSON.stringify(article, null, 2));
 
@@ -60,6 +64,9 @@ class ArticleService {
                 if (exists) {
                     throw new ValidationError(`An article with slug '${article.slug}' already exists. Please choose a different slug.`);
                 }
+
+                // Download and organize external images locally before saving
+                await imageDownloadService.processArticleImages(article);
 
                 await fs.writeFile(filePath, JSON.stringify(article, null, 2));
                 seenSlugsInBatch.add(article.slug);

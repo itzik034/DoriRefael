@@ -38,9 +38,25 @@ function getArticleRoutes(): string[] {
     return Array.from(routes);
 }
 
+// Custom plugin to ensure article images inside src/Content/Images are copied to dist/src/Content/Images on build
+function copyArticleImagesPlugin() {
+    return {
+        name: 'copy-article-images',
+        closeBundle() {
+            const imagesSrcDir = path.resolve(__dirname, 'src/Content/Images');
+            const imagesDistDir = path.resolve(__dirname, 'dist/src/Content/Images');
+            if (fs.existsSync(imagesSrcDir)) {
+                fs.mkdirSync(imagesDistDir, { recursive: true });
+                fs.cpSync(imagesSrcDir, imagesDistDir, { recursive: true });
+            }
+        }
+    };
+}
+
 export default defineConfig({
     plugins: [
         react(),
+        copyArticleImagesPlugin(),
         Sitemap({
             hostname: 'https://dorirefael.co.il',
             generateRobotsTxt: false,
@@ -69,4 +85,3 @@ export default defineConfig({
     server: { open: true },
     base: "/"
 })
-

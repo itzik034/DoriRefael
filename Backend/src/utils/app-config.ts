@@ -9,6 +9,7 @@ class AppConfig {
     public readonly port = Number(process.env.PORT);
     public readonly seoAgentSecret = process.env.SEO_AGENT_SECRET;
     public readonly articlesDir = path.join(__dirname, "../../../Frontend/src/Content/Articles");
+    public readonly imagesDir = path.join(__dirname, "../../../Frontend/src/Content/Images");
     public readonly frontendDir = path.join(__dirname, "../../../Frontend");
 }
 

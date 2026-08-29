@@ -328,11 +328,15 @@
 }
 
 .article__body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin-block: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 480px !important;
+    object-fit: contain !important;
+    display: block !important;
+    border-radius: 12px !important;
+    margin: 1.5rem auto !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 .article__body table {
