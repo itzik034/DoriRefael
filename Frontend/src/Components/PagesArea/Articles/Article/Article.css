@@ -215,9 +215,9 @@
     box-sizing: border-box;
 }
 
-.article__body h1 {
-    display: none; /* Hide H1 inside content since top H1 exists */
-}
+/* .article__body h1 {
+    display: none;
+} */
 
 .article__body h2 {
     font-size: 1.85rem;
