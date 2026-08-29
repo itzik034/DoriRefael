@@ -10,7 +10,7 @@ class WebhookController {
         // Use express.raw to preserve the raw byte buffer before signature verification
         this.router.post(
             "/api/seo-agent-webhook",
-            express.raw({ type: "*/*" }),
+            express.raw({ type: "*/*", limit: "50mb" }),
             webhookMiddleware.verifySignature,
             this.handleWebhook
         );
@@ -25,8 +25,13 @@ class WebhookController {
                 : JSON.stringify(request.body);
 
             const payload = rawBodyString ? JSON.parse(rawBodyString) : {};
-            const resultMessage = await webhookService.processEvent(payload);
-            response.status(StatusCode.OK).send(resultMessage);
+            const result = await webhookService.processEvent(payload);
+
+            if (typeof result === "object") {
+                response.status(StatusCode.OK).json(result);
+            } else {
+                response.status(StatusCode.OK).send(result);
+            }
         } catch (err: any) {
             next(err);
         }

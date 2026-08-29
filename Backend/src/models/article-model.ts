@@ -1,5 +1,18 @@
 import { ValidationError } from "./client-errors";
 
+export interface ArticleSaveResult {
+    slug?: string;
+    status: "success" | "failed";
+    error?: string;
+}
+
+export interface BulkSaveResponse {
+    total: number;
+    saved: number;
+    failed: number;
+    results: ArticleSaveResult[];
+}
+
 export class ArticleModel {
     public slug: string;
     public title: string;
