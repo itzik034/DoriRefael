@@ -1,0 +1,279 @@
+/* Menu / Navigation Styles */
+.menu__list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+}
+
+.menu__link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu__link--english {
+    font-size: 1.2rem;
+}
+
+.menu__link:hover,
+.menu__link:focus,
+.menu__link.active {
+    color: var(--color-steel-blue);
+}
+
+/* Dropdown Menu Styles */
+.menu__dropdown {
+    position: relative;
+}
+
+.menu__dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    padding: 0;
+}
+
+.dropdown-arrow {
+    font-size: 0.65rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.menu__dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.menu__dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: var(--color-navy);
+    min-width: 250px;
+    max-width: 340px;
+    max-height: calc(85vh - 70px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius-md, 8px);
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.3s;
+    z-index: 1002;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-steel-blue) rgba(255, 255, 255, 0.05);
+}
+
+.menu__dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu__dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu__dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: var(--color-steel-blue);
+    border-radius: 4px;
+}
+
+/* Pseudo-element to bridge the hover gap */
+.menu__dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    right: 0;
+    width: 100%;
+    height: 14px;
+}
+
+/* Desktop Hover & Open Animations */
+@media (min-width: 769px) {
+    .menu__dropdown:hover .menu__dropdown-menu,
+    .menu__dropdown.open .menu__dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .menu__dropdown:hover .dropdown-arrow,
+    .menu__dropdown.open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+}
+
+.menu__dropdown-item {
+    width: 100%;
+}
+
+.menu__dropdown-link {
+    color: var(--color-white);
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-align: right;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-right 0.2s ease;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.menu__dropdown-link:hover,
+.menu__dropdown-link:focus,
+.menu__dropdown-link.active {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--color-steel-blue);
+    padding-right: 1.75rem;
+}
+
+/* Prevent background scrolling when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        background-color: var(--color-navy);
+        padding-top: 5rem;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        transform: translateX(100%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s ease;
+    }
+
+    .menu.open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .menu__item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu__link {
+        font-size: 1.35rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu__dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__dropdown-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 0.6rem;
+    }
+
+    /* Balance the flex container so the text is centered ignoring the arrow */
+    .menu__dropdown-toggle::before {
+        content: '';
+        display: block;
+        width: 0.65rem; 
+    }
+
+    /* Mobile Accordion Dropdown */
+    .menu__dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin-top 0.3s ease;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .menu__dropdown.open .menu__dropdown-menu {
+        max-height: 50vh;
+        overflow-y: auto;
+        opacity: 1;
+        visibility: visible;
+        padding: 0.5rem 0;
+        margin-top: 0.75rem;
+        border-block: 1px solid rgba(255, 255, 255, 0.08);
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-steel-blue) rgba(255, 255, 255, 0.05);
+    }
+
+    .menu__dropdown-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu__dropdown-link {
+        font-size: 1.15rem;
+        padding: 0.6rem 1.5rem;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .menu__dropdown-link:hover,
+    .menu__dropdown-link:focus,
+    .menu__dropdown-link.active {
+        padding-right: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}

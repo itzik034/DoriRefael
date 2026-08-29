@@ -13,3 +13,17 @@
         left: auto !important;
     }
 }
+
+/* Position the accessibility widget on the left side on article pages to prevent overlapping header content */
+body:has(.article-page) ._access-icon {
+    left: 24px !important;
+    right: auto !important;
+}
+
+@media (max-width: 768px) {
+    body:has(.article-page) ._access-icon {
+        left: 16px !important;
+        right: auto !important;
+    }
+}
+

@@ -1,7 +1,6 @@
 import cors from "cors";
 import express from "express";
 import { appConfig } from "./utils/app-config";
-import { controller } from "./controllers/controller";
 import { webhookController } from "./controllers/webhook-controller";
 import { errorsMiddleware } from "./middlewares/errors-middleware";
 
@@ -17,9 +16,6 @@ class App {
 
             // Parse JSON for other routes
             server.use(express.json());
-
-            // General API routes
-            server.use(controller.router);
 
             // Error middlewares
             server.use(errorsMiddleware.routeNotFound);

@@ -21,7 +21,16 @@ import { ViralWarts } from "../../PagesArea/Treatments/ViralWarts";
 import { appConfig } from "../../../Utils/AppConfig";
 import { AccessibilityStatement } from "../../PagesArea/AccessibilityStatement/AccessibilityStatement";
 
+import { Article } from "../../PagesArea/Articles/Article/Article";
+import { articlesService } from "../../../Services/ArticlesService";
+
 const baseUrl = appConfig.baseUrl;
+
+// Generate static routes for each JSON article to enable static SSG prerendering
+const dynamicArticleRoutes: RouteRecord[] = articlesService.getAllArticles().map(article => ({
+    path: `articles/${article.slug}`,
+    element: <Article article={article} />
+}));
 
 export const routes: RouteRecord[] = [
     {
@@ -78,11 +87,15 @@ export const routes: RouteRecord[] = [
             { path: "treatments/viral", element: <ViralWarts /> },
             { path: "טיפולים/יבלת-ויראלית", element: <Navigate to={baseUrl + "/treatments/viral"} replace /> },
 
-            // Articles
+            // Static Articles
             { path: "articles/viral-vs-mechanical", element: <ViralVsMechanicalWarts /> },
             { path: "articles/dry-skin-and-cracks", element: <DrySkinAndCracks /> },
             { path: "טיפולים/יובש-בעור-כפות-הרגליים", element: <Navigate to={baseUrl + "/articles/dry-skin-and-cracks"} replace /> },
             { path: "articles/athletes-load-rehabilitation", element: <AthletesLoadRehabilitation /> },
+
+            // Dynamic JSON-based Articles (SSG Prerendered + Dynamic Parameter Route)
+            ...dynamicArticleRoutes,
+            { path: "articles/:slug", element: <Article /> },
 
             // 404 Fallback
             { path: "*", element: <Page404 /> }
