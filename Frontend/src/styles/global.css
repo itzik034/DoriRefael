@@ -12,7 +12,7 @@
   --color-gray-bg: #eef2f5;
   --color-dark-footer: #0a111a;
   
-  --font-family: 'David', sans-serif;
+  --font-family: 'David', 'David Libre', sans-serif;
 }
 
 *, *::before, *::after {

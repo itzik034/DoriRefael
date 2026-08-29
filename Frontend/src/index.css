@@ -1,9 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=David+Libre:wght@400;500;700&family=Nunito:wght@400;600;700;800&family=Playpen+Sans:wght@400;700&display=swap');
 @import './styles/global.css';
 
+/* Local Font-Face declarations: check local system installation, then local bundled font files, then Google Fonts fallback */
 @font-face {
     font-family: 'PlaypenSans';
-    src: url('./assets/Fonts/PlaypenSans/PlaypenSans-Bold.ttf') format('truetype');
+    src: local('PlaypenSans'),
+         local('Playpen Sans Bold'),
+         local('PlaypenSans-Bold'),
+         url('./assets/Fonts/PlaypenSans/PlaypenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playpen Sans';
+    src: local('Playpen Sans Bold'),
+         local('PlaypenSans-Bold'),
+         url('./assets/Fonts/PlaypenSans/PlaypenSans-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -11,7 +25,10 @@
 
 @font-face {
     font-family: 'ComicRelief';
-    src: url('./assets/Fonts/ComicRelief/ComicRelief-Regular.ttf') format('truetype');
+    src: local('ComicRelief'),
+         local('Comic Relief'),
+         local('ComicRelief-Regular'),
+         url('./assets/Fonts/ComicRelief/ComicRelief-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -19,7 +36,10 @@
 
 @font-face {
     font-family: 'ComicRelief';
-    src: url('./assets/Fonts/ComicRelief/ComicRelief-Bold.ttf') format('truetype');
+    src: local('ComicRelief Bold'),
+         local('Comic Relief Bold'),
+         local('ComicRelief-Bold'),
+         url('./assets/Fonts/ComicRelief/ComicRelief-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -27,7 +47,10 @@
 
 @font-face {
     font-family: 'Charm';
-    src: url('./assets/Fonts/Charm/Charm-Regular.ttf') format('truetype');
+    src: local('Charm'),
+         local('Charm Regular'),
+         local('Charm-Regular'),
+         url('./assets/Fonts/Charm/Charm-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -35,7 +58,9 @@
 
 @font-face {
     font-family: 'Charm';
-    src: url('./assets/Fonts/Charm/Charm-Bold.ttf') format('truetype');
+    src: local('Charm Bold'),
+         local('Charm-Bold'),
+         url('./assets/Fonts/Charm/Charm-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -43,7 +68,10 @@
 
 @font-face {
     font-family: 'David';
-    src: url('./assets/fonts/David/DavidLibre-Regular.ttf') format('truetype');
+    src: local('David'),
+         local('David Libre'),
+         local('DavidLibre-Regular'),
+         url('./assets/Fonts/David/DavidLibre-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -51,7 +79,10 @@
 
 @font-face {
     font-family: 'David';
-    src: url('./assets/fonts/David/DavidLibre-Medium.ttf') format('truetype');
+    src: local('David Medium'),
+         local('David Libre Medium'),
+         local('DavidLibre-Medium'),
+         url('./assets/Fonts/David/DavidLibre-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -59,7 +90,43 @@
 
 @font-face {
     font-family: 'David';
-    src: url('./assets/fonts/David/DavidLibre-Bold.ttf') format('truetype');
+    src: local('David Bold'),
+         local('David Libre Bold'),
+         local('DavidLibre-Bold'),
+         url('./assets/Fonts/David/DavidLibre-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'David Libre';
+    src: local('David Libre'),
+         local('David'),
+         local('DavidLibre-Regular'),
+         url('./assets/Fonts/David/DavidLibre-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'David Libre';
+    src: local('David Libre Medium'),
+         local('David Medium'),
+         local('DavidLibre-Medium'),
+         url('./assets/Fonts/David/DavidLibre-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'David Libre';
+    src: local('David Libre Bold'),
+         local('David Bold'),
+         local('DavidLibre-Bold'),
+         url('./assets/Fonts/David/DavidLibre-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -73,7 +140,7 @@ html, body, #root {
     padding: 0;
     margin: 0;
     direction: rtl;
-    font-family: 'David', Arial, sans-serif;
+    font-family: 'David', 'David Libre', Arial, sans-serif;
     overflow-x: hidden;
     max-width: 100%;
     width: 100%;
