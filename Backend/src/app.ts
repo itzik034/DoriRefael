@@ -12,13 +12,19 @@ class App {
             const server = express();
             server.use(cors());
 
-            // Register routers
+            // Webhook router (handles raw body parsing)
             server.use(webhookController.router);
+
+            // Parse JSON for other routes
+            server.use(express.json());
+
+            // General API routes
             server.use(controller.router);
+
+            // Error middlewares
             server.use(errorsMiddleware.routeNotFound);
             server.use(errorsMiddleware.catchAll);
 
-            server.use(express.json());
             server.listen(appConfig.port, () => console.log("Listening on http://localhost:" + appConfig.port));
         }
         catch (err: any) {

@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import fs from "fs/promises";
 import path from "path";
+import { appConfig } from "../utils/app-config";
 
 class WebhookService {
 
@@ -9,26 +10,31 @@ class WebhookService {
             return false;
         }
 
-        const secret = process.env.SEO_AGENT_SECRET;
+        const secret = appConfig.seoAgentSecret;
         if (!secret) {
             console.error("SEO_AGENT_SECRET is not defined in environment variables");
             return false;
         }
 
-        // Calculate HMAC-SHA256
-        const hmac = crypto.createHmac("sha256", secret);
-        hmac.update(rawBody);
-        const calculatedSignature = `sha256=${hmac.digest("hex")}`;
-
-        // Secure compare
-        const expectedBuffer = Buffer.from(signatureHeader, "utf8");
-        const calculatedBuffer = Buffer.from(calculatedSignature, "utf8");
-
-        if (expectedBuffer.length !== calculatedBuffer.length || !crypto.timingSafeEqual(expectedBuffer, calculatedBuffer)) {
+        const receivedHex = signatureHeader.substring("sha256=".length).trim();
+        if (!receivedHex) {
             return false;
         }
 
-        return true;
+        // Calculate HMAC-SHA256 from raw body
+        const hmac = crypto.createHmac("sha256", secret);
+        hmac.update(rawBody);
+        const calculatedHex = hmac.digest("hex");
+
+        // Convert signatures to buffers for timing-safe equality comparison
+        const receivedBuffer = Buffer.from(receivedHex, "utf8");
+        const calculatedBuffer = Buffer.from(calculatedHex, "utf8");
+
+        if (receivedBuffer.length !== calculatedBuffer.length) {
+            return false;
+        }
+
+        return crypto.timingSafeEqual(receivedBuffer, calculatedBuffer);
     }
 
     public async processEvent(payload: any): Promise<string> {

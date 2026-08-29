@@ -1,28 +1,34 @@
-import express, { Request, Response, Router } from "express";
+import express, { NextFunction, Request, Response, Router } from "express";
 import { webhookService } from "../services/webhook-service";
 import { webhookMiddleware } from "../middlewares/webhook-middleware";
+import { StatusCode } from "../models/enums";
 
 class WebhookController {
     public router: Router = express.Router();
 
     public constructor() {
-        // We use express.raw to ensure the body is parsed as a Buffer, and webhookMiddleware to verify the signature.
+        // Use express.raw to preserve the raw byte buffer before signature verification
         this.router.post(
             "/api/seo-agent-webhook",
-            express.raw({ type: 'application/json' }),
+            express.raw({ type: "*/*" }),
             webhookMiddleware.verifySignature,
             this.handleWebhook
         );
     }
 
-    private handleWebhook = async (request: Request, response: Response) => {
+    private handleWebhook = async (request: Request, response: Response, next: NextFunction) => {
         try {
-            const payload = JSON.parse(request.body.toString("utf8"));
+            const rawBodyString = Buffer.isBuffer(request.body)
+                ? request.body.toString("utf8")
+                : typeof request.body === "string"
+                ? request.body
+                : JSON.stringify(request.body);
+
+            const payload = rawBodyString ? JSON.parse(rawBodyString) : {};
             const resultMessage = await webhookService.processEvent(payload);
-            response.status(200).send(resultMessage);
+            response.status(StatusCode.OK).send(resultMessage);
         } catch (err: any) {
-            console.error("Webhook processing error:", err);
-            response.status(500).send("Internal Server Error");
+            next(err);
         }
     };
 }
