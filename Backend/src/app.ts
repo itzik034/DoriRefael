@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import { appConfig } from "./utils/app-config";
 import { webhookController } from "./controllers/webhook-controller";
+import { articleController } from "./controllers/article-contoller";
 import { errorsMiddleware } from "./middlewares/errors-middleware";
 
 class App {
@@ -16,6 +17,9 @@ class App {
 
             // Parse JSON for other routes
             server.use(express.json());
+
+            // Article CRUD router
+            server.use(articleController.router);
 
             // Error middlewares
             server.use(errorsMiddleware.routeNotFound);

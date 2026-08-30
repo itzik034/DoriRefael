@@ -27,13 +27,13 @@ export class ArticleModel {
     public constructor(payload: any) {
         this.slug = payload?.slug;
         this.title = payload?.title;
-        this.description = payload?.meta_description;
+        this.description = payload?.description ?? payload?.meta_description;
         this.excerpt = payload?.excerpt;
-        this.image = payload?.featured_image_url;
-        this.publishedAt = payload?.published_at;
-        this.schema = payload?.schema_markup;
-        this.faq = payload?.faq_schema;
-        this.html = payload?.content;
+        this.image = payload?.image ?? payload?.featured_image_url;
+        this.publishedAt = payload?.publishedAt ?? payload?.published_at;
+        this.schema = payload?.schema ?? payload?.schema_markup;
+        this.faq = payload?.faq ?? payload?.faq_schema;
+        this.html = payload?.html ?? payload?.content;
     }
 
     public validate(): void {

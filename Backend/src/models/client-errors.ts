@@ -16,8 +16,8 @@ export class RouteNotFoundError extends BaseClientError {
 }
 
 export class ResourceNotFoundError extends BaseClientError {
-    public constructor(id: number) {
-        super(StatusCode.NotFound, `id ${id} not found.`);
+    public constructor(id: number | string) {
+        super(StatusCode.NotFound, `id or slug '${id}' not found.`);
     }
 }
 
