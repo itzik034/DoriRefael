@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../../Services/AuthService";
 import { notify } from "../../../Utils/Notify";
+import { SEO } from "../../SharedArea/SEO/SEO";
 import "./Login.css";
 
 export function Login() {
@@ -51,6 +52,12 @@ export function Login() {
 
     return (
         <div className="Login">
+            <SEO
+                title="התחברות למערכת הניהול | דורי רפאל"
+                description="התחברות למערכת הניהול של אתר דורי רפאל."
+                canonical="/login"
+                noindex={true}
+            />
             {/* Ambient decorative lighting elements */}
             <div className="login-ambient-blob-1" aria-hidden="true" />
             <div className="login-ambient-blob-2" aria-hidden="true" />

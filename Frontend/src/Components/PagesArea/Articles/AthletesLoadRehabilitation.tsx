@@ -11,6 +11,7 @@ export function AthletesLoadRehabilitation() {
                 description="מאמר מקצועי על שיקום עומסים, פציעות ספורט ושחיקה בכפות הרגליים אצל ספורטאים וחיילים מבית דורי רפאל."
                 keywords="שיקום עומסים, פציעות ספורט כף רגל, עומס ספורטאים, טיפול רגליים לחיילים"
                 canonical="/articles/athletes-load-rehabilitation"
+                ogType="article"
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: שיקום עומסים ופציעות ספורט בכפות הרגליים</h1>

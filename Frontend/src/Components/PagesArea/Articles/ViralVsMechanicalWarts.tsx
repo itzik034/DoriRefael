@@ -11,6 +11,7 @@ export function ViralVsMechanicalWarts() {
                 description="איך מבדילים בין יבלת מכאנית ליבלת ויראלית בכף הרגל? מדריך מקצועי מפורט מבית דורי רפאל לאבחון נכון וטיפול יעיל."
                 keywords="יבלת מכאנית, יבלת ויראלית, הבדל בין יבלות, מדריך יבלות, יבלת לחץ"
                 canonical="/articles/viral-vs-mechanical"
+                ogType="article"
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: מה ההבדל בין יבלת מכאנית ליבלת ויראלית?</h1>

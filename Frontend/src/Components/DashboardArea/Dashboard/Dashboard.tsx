@@ -7,6 +7,7 @@ import { notify } from "../../../Utils/Notify";
 import { ArticleViewModal } from "./ArticleViewModal";
 import { ArticleFormModal } from "./ArticleFormModal";
 import { DeleteConfirmModal } from "./DeleteConfirmModal";
+import { SEO } from "../../SharedArea/SEO/SEO";
 import "./Dashboard.css";
 
 export function Dashboard() {
@@ -135,6 +136,12 @@ export function Dashboard() {
 
     return (
         <div className="Dashboard">
+            <SEO
+                title="לוח בקרה | דורי רפאל"
+                description="פאנל ניהול מאמרים ותוכן באתר דורי רפאל."
+                canonical="/dashboard"
+                noindex={true}
+            />
             {/* Top Navigation Bar */}
             <header className="dashboard-topbar">
                 <div className="topbar-container">

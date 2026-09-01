@@ -10,6 +10,7 @@ export function EnglishPage() {
                 description="Dori Refael - Medical & Clinical Pedicure Specialist in Tel Aviv with over 20 years of experience in ingrown toenail, fungus, warts, and diabetic foot care."
                 keywords="Medical Pedicure Tel Aviv, Podiatry Tel Aviv, Dori Refael, Ingrown Toenail Treatment, Fungal Nail Care"
                 canonical="/en"
+                ogLocale="en_US"
             />
             <header className="english__header">
                 <div className="english__header-content">

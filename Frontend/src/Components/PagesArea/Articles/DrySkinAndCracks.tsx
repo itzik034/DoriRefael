@@ -11,6 +11,7 @@ export function DrySkinAndCracks() {
                 description="טיפול מקיף בעור יבש, קשה וסדוק בכפות הרגליים להחזרת הלחות, הרכות והנוחות בהליכה בקליניקה של דורי רפאל."
                 keywords="יובש בכפות הרגליים, סדקים בעקב, טיפול בעור יבש, עור סדוק ברגל"
                 canonical="/articles/dry-skin-and-cracks"
+                ogType="article"
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">המדריך המלא: עור יבש וסדקים עמוקים בכפות הרגליים</h1>

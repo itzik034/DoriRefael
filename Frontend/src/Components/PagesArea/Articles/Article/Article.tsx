@@ -91,7 +91,7 @@ export function Article(props: ArticleProps) {
 
     const canonicalUrl = `https://dorirefael.co.il/articles/${article.slug}`;
     const metaDescription = article.description || article.excerpt || `מאמר מקצועי בנושא ${article.title} מאת דורי רפאל.`;
-    const featuredImageUrl = article.image || 'https://dorirefael.co.il/src/assets/DoriProfile.webp';
+    const featuredImageUrl = article.image || 'https://dorirefael.co.il/og-image.jpg';
 
     // Structured Data: Article / MedicalWebPage Schema
     const articleSchema = {
@@ -194,7 +194,7 @@ export function Article(props: ArticleProps) {
                 canonical={`/articles/${article.slug}`}
                 ogTitle={article.title}
                 ogDescription={metaDescription}
-                ogImage={article.image || '/src/assets/DoriProfile.webp'}
+                ogImage={article.image || '/og-image.jpg'}
                 ogType="article"
             />
 
