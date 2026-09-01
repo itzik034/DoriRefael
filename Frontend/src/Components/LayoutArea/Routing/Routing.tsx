@@ -1,4 +1,4 @@
-import { Navigate, useRoutes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import type { RouteRecord } from "vite-react-ssg";
 import { Layout } from "../Layout/Layout";
 import { Home } from "../../PagesArea/Home/Home";
@@ -23,6 +23,8 @@ import { AccessibilityStatement } from "../../PagesArea/AccessibilityStatement/A
 
 import { Article } from "../../PagesArea/Articles/Article/Article";
 import { articlesService } from "../../../Services/ArticlesService";
+import { Login } from "../../DashboardArea/Login/Login";
+import { Dashboard } from "../../DashboardArea/Dashboard/Dashboard";
 
 const baseUrl = appConfig.baseUrl;
 
@@ -33,6 +35,11 @@ const dynamicArticleRoutes: RouteRecord[] = articlesService.getAllArticles().map
 }));
 
 export const routes: RouteRecord[] = [
+    // Standalone Admin screens (no Header, Footer, WhatsApp button, or Accessibility widget)
+    { path: baseUrl ? `${baseUrl}/login` : "/login", element: <Login /> },
+    { path: baseUrl ? `${baseUrl}/admin` : "/admin", element: <Navigate to={baseUrl ? `${baseUrl}/login` : "/login"} replace /> },
+    { path: baseUrl ? `${baseUrl}/dashboard` : "/dashboard", element: <Dashboard /> },
+
     {
         path: baseUrl + "/",
         element: <Layout />,
@@ -102,8 +109,4 @@ export const routes: RouteRecord[] = [
         ]
     }
 ];
-
-export function Routing() {
-    return useRoutes(routes);
-}
 
