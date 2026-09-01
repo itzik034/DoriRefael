@@ -1,16 +1,17 @@
 import express, { NextFunction, Request, Response, Router } from "express";
 import { articleService } from "../services/article-service";
 import { StatusCode } from "../models/enums";
+import { securityMiddleware } from "../middlewares/security-middleware";
 
 class ArticleController {
     public router: Router = express.Router();
 
     public constructor() {
-        this.router.get("/api/articles", this.getAllArticles);
-        this.router.get("/api/articles/:slug", this.getArticleBySlug);
-        this.router.post("/api/articles", this.addArticle);
-        this.router.put("/api/articles/:slug", this.updateArticle);
-        this.router.delete("/api/articles/:slug", this.deleteArticle);
+        this.router.get("/api/articles", securityMiddleware.verifyToken, this.getAllArticles);
+        this.router.get("/api/articles/:slug", securityMiddleware.verifyToken, this.getArticleBySlug);
+        this.router.post("/api/articles", securityMiddleware.verifyToken, this.addArticle);
+        this.router.put("/api/articles/:slug", securityMiddleware.verifyToken, this.updateArticle);
+        this.router.delete("/api/articles/:slug", securityMiddleware.verifyToken, this.deleteArticle);
     }
 
     private getAllArticles = async (request: Request, response: Response, next: NextFunction) => {
