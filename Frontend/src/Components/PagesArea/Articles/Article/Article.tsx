@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { SEO } from '../../../SharedArea/SEO/SEO';
 import { appConfig } from '../../../../Utils/AppConfig';
 import { articlesService } from '../../../../Services/ArticlesService';
@@ -199,7 +199,7 @@ export function Article(props: ArticleProps) {
             />
 
             {/* Schema.org Structured Data */}
-            <Helmet>
+            <Head>
                 <script type="application/ld+json">
                     {JSON.stringify(articleSchema)}
                 </script>
@@ -216,7 +216,7 @@ export function Article(props: ArticleProps) {
                         {JSON.stringify(customSchemaObject)}
                     </script>
                 )}
-            </Helmet>
+            </Head>
 
             <div className="article-page__container">
                 {/* Breadcrumbs Navigation */}

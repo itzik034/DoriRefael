@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { NavLink } from 'react-router-dom';
 import './Home.css';
 import DoriProfile from '../../../assets/DoriProfile.webp';
@@ -37,11 +37,11 @@ export function Home() {
                 keywords="פדיקור רפואי, דורי רפאל, טיפול בכף הרגל תל אביב, ציפורן חודרנית, פטרת ציפורניים, יבלות, פדיקור סוכרתי, SWIFT"
                 canonical="/"
             />
-            <Helmet>
+            <Head>
                 <script type="application/ld+json">
                     {JSON.stringify(medicalBusinessSchema)}
                 </script>
-            </Helmet>
+            </Head>
             {/* Hero Section */}
             <header className="home__hero">
                 <div className="home__hero-content">

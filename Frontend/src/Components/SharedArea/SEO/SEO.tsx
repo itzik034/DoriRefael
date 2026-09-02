@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 export interface SEOProps {
     title?: string;
@@ -11,6 +11,8 @@ export interface SEOProps {
     ogType?: 'website' | 'article' | string;
     ogLocale?: string;
     noindex?: boolean;
+    schema?: Record<string, any> | Record<string, any>[] | string;
+    children?: React.ReactNode;
 }
 
 const SITE_NAME = 'דורי רפאל';
@@ -31,6 +33,8 @@ export function SEO({
     ogType = 'website',
     ogLocale = 'he_IL',
     noindex = false,
+    schema,
+    children,
 }: SEOProps) {
     const fullTitle = title ? `${title}` : DEFAULT_TITLE;
     const metaOgTitle = ogTitle || fullTitle;
@@ -57,7 +61,7 @@ export function SEO({
     })();
 
     return (
-        <Helmet>
+        <Head>
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             {keywords && <meta name="keywords" content={keywords} />}
@@ -80,7 +84,24 @@ export function SEO({
 
             {/* Robots */}
             {noindex && <meta name="robots" content="noindex, nofollow" />}
-        </Helmet>
+
+            {/* Structured Data (JSON-LD) */}
+            {schema && (
+                Array.isArray(schema) ? (
+                    schema.map((item, idx) => (
+                        <script key={idx} type="application/ld+json">
+                            {typeof item === 'string' ? item : JSON.stringify(item)}
+                        </script>
+                    ))
+                ) : (
+                    <script type="application/ld+json">
+                        {typeof schema === 'string' ? schema : JSON.stringify(schema)}
+                    </script>
+                )
+            )}
+
+            {children}
+        </Head>
     );
 }
 
