@@ -13,6 +13,7 @@ export function DiabetesTreatment() {
                 description="טיפול מקצועי וזהיר בכף רגל סוכרתית למניעת סיבוכים, כיבים וזיהומים, על ידי פדיקוריסט רפואי מוסמך."
                 keywords="כף רגל סוכרתית, פדיקור לחולי סוכרת, טיפול בסוכרת כף רגל, דורי רפאל סוכרת"
                 canonical="/treatments/diabetes"
+                ogImage={diabetesImg}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול פודיאטרי ופדיקור רפואי לחולי סוכרת</h1>

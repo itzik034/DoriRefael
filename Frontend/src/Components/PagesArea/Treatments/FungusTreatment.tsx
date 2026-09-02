@@ -16,6 +16,7 @@ export function FungusTreatment() {
                 description="ניקוי, חיטוי וטיפול מקצועי בפטרת כף הרגל והציפורניים לשיפור האסתטיקה ובריאות כף הרגל בקליניקה בתל אביב."
                 keywords="פטרת ציפורניים, פטרת עור, טיפול בפטרת, ניקוי פטרת, פטרת כף הרגל"
                 canonical="/treatments/fungus"
+                ogImage={fungusNail2}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">פטרת עור ופטרת ציפורניים בכפות הרגליים</h1>

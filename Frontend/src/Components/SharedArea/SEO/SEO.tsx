@@ -12,6 +12,8 @@ export interface SEOProps {
     ogLocale?: string;
     noindex?: boolean;
     schema?: Record<string, any> | Record<string, any>[] | string;
+    lang?: string;
+    dir?: 'rtl' | 'ltr';
     children?: React.ReactNode;
 }
 
@@ -34,6 +36,8 @@ export function SEO({
     ogLocale = 'he_IL',
     noindex = false,
     schema,
+    lang = 'he',
+    dir = 'rtl',
     children,
 }: SEOProps) {
     const fullTitle = title ? `${title}` : DEFAULT_TITLE;
@@ -62,6 +66,7 @@ export function SEO({
 
     return (
         <Head>
+            <html lang={lang} dir={dir} />
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             {keywords && <meta name="keywords" content={keywords} />}

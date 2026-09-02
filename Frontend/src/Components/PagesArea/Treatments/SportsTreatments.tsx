@@ -12,6 +12,7 @@ export function SportsTreatments() {
                 description="טיפולי כף רגל מותאמים במיוחד לספורטאים וחיילים החשופים לעומסים, שחיקה, ציפורן חודרנית, יבלות עומס ושלפוחיות."
                 keywords="פדיקור רפואי לספורטאים, טיפול רגליים לחיילים, עומס בכף הרגל, פציעות ספורט כף רגל"
                 canonical="/treatments/sports"
+                ogImage={sportsInjuries}
             />
             <header className="treatment__header">
                 <div className="treatment__header-content">

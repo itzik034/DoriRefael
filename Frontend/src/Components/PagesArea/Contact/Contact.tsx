@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Contact.css';
 import { SEO } from '../../SharedArea/SEO/SEO';
+import clinicHeroImage from '../../../assets/clinic_hero_3.jpg';
 
 export function Contact() {
     const [nameVal, setNameVal] = useState('');
@@ -39,6 +40,7 @@ export function Contact() {
                 description="צרו קשר עם דורי רפאל לקביעת תור לייעוץ וטיפול פדיקור רפואי בקליניקה בתל אביב. טלפון ישיר: 050-826-6042."
                 keywords="צור קשר דורי רפאל, קביעת תור פדיקור רפואי, קליניקה בתל אביב, טלפון דורי רפאל"
                 canonical="/contact"
+                ogImage={clinicHeroImage}
             />
             <header className="contact__header">
                 <h1 className="contact__title">צור קשר</h1>

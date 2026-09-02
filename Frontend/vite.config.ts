@@ -61,7 +61,6 @@ export default defineConfig({
             hostname: 'https://dorirefael.co.il',
             generateRobotsTxt: false,
             dynamicRoutes: [
-                '/',
                 '/accessibility',
                 '/about',
                 '/en',

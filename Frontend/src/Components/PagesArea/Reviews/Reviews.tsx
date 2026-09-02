@@ -1,5 +1,6 @@
 import './Reviews.css';
 import { SEO } from '../../SharedArea/SEO/SEO';
+import doriProfileImage from '../../../assets/DoriProfile.webp';
 
 interface Review {
     id: number;
@@ -81,6 +82,7 @@ export function Reviews() {
                 description="קראו חוות דעת, המלצות וביקורות של מטופלים על טיפולי פדיקור רפואי, ציפורן חודרנית, טיפולי SWIFT ופטרת אצל דורי רפאל."
                 keywords="ביקורות דורי רפאל, המלצות פדיקור רפואי, חוות דעת פדיקוריסט, המלצות טיפול ביבלות"
                 canonical="/reviews"
+                ogImage={doriProfileImage}
             />
             <header className="reviews__header">
                 <h1 className="reviews__title">המלצות המטופלים</h1>

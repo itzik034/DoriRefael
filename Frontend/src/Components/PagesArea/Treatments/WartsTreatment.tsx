@@ -16,6 +16,7 @@ export function WartsTreatment() {
                 description="אבחון וטיפול חדשני ביבלות ברגליים, בידיים ובמקומות אחרים בעור בטכנולוגיית SWIFT מתקדמת בקליניקה של דורי רפאל בתל אביב."
                 keywords="טיפול ביבלות, טכנולוגיית SWIFT, יבלות מכאניות, יבלות בכף הרגל, דורי רפאל SWIFT"
                 canonical="/treatments/warts"
+                ogImage={wartBefore}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">יבלות בכף הרגל – אבחון וטיפול מקצועי</h1>

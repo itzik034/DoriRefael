@@ -13,6 +13,7 @@ export function ElderlyPedicure() {
                 description="טיפולי כף רגל ייעודיים לבני ובנות גיל הזהב, לתחזוקה נכונה, הגנה על העור ונוחות מרבית בהליכה."
                 keywords="פדיקור לגיל הזהב, טיפול רגליים לקשישים, פדיקור רפואי מבוגרים, דורי רפאל גיל שלישי"
                 canonical="/treatments/elderly"
+                ogImage={elderlyCouple}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול פודיאטרי ופדיקור רפואי בגיל השלישי</h1>

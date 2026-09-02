@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { appConfig } from '../../../Utils/AppConfig';
 import '../Treatments/Treatment.css';
 import { SEO } from '../../SharedArea/SEO/SEO';
+import sportsInjuriesImg from '../../../assets/patients/sports-injuries.jpg';
 
 export function AthletesLoadRehabilitation() {
     return (
@@ -11,6 +12,7 @@ export function AthletesLoadRehabilitation() {
                 description="מאמר מקצועי על שיקום עומסים, פציעות ספורט ושחיקה בכפות הרגליים אצל ספורטאים וחיילים מבית דורי רפאל."
                 keywords="שיקום עומסים, פציעות ספורט כף רגל, עומס ספורטאים, טיפול רגליים לחיילים"
                 canonical="/articles/athletes-load-rehabilitation"
+                ogImage={sportsInjuriesImg}
                 ogType="article"
             />
             <header className="treatment__header">

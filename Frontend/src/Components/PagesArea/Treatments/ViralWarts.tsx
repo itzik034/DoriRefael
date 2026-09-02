@@ -24,6 +24,7 @@ export function ViralWarts() {
                 description="אבחון וטיפול מקצועי ביבלות ויראליות (HPV) בכפות הרגליים והידיים בקליניקה של דורי רפאל בתל אביב בטכנולוגיית SWIFT."
                 keywords="יבלת ויראלית, טיפול ביבלת ויראלית, יבלת בכף הרגל, HPV ברגל, SWIFT יבלת ויראלית"
                 canonical="/treatments/viral"
+                ogImage={case1Before}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">יבלות ויראליות – הסבר ומידע</h1>

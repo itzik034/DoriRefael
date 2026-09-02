@@ -13,6 +13,7 @@ export function IngrownTreatment() {
                 description="עזרה ראשונה וטיפול מקצועי בציפורן חודרנית להקלה מיידית בכאב וללא ניתוח בקליניקה בתל אביב."
                 keywords="ציפורן חודרנית, טיפול בציפורן חודרנית, הקלה בכאב ציפורן חודרנית, פדיקור רפואי ציפורן חודרנית"
                 canonical="/treatments/ingrown"
+                ogImage={ingrownAfter}
             />
             <header className="treatment__header">
                 <h1 className="treatment__title">טיפול בציפורן חודרנית</h1>

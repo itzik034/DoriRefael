@@ -10,6 +10,7 @@ export function ClinicalPedicure() {
                 description="טיפולי פדיקור רפואי קליני ושיקומי ברמה הגבוהה ביותר בקליניקה פרטית ומאובזרת בתל אביב."
                 keywords="פדיקור רפואי קליני, פדיקור שיקומי, טיפול בכף הרגל תל אביב, דורי רפאל פדיקור"
                 canonical="/treatments/clinical"
+                ogImage={patientImg}
             />
             <header className="treatment__header">
                 <div className="treatment__header-content">

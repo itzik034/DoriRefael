@@ -1,0 +1,49 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/dorirefa/domains/dorirefael.co.il/node_js_apps/Frontend"
+PassengerBaseURI "/"
+PassengerNodejs "/home/dorirefa/nodevenv/domains/dorirefael.co.il/node_js_apps/Frontend/20/bin/node"
+PassengerAppType node
+PassengerStartupFile dist/app.js
+PassengerAppLogFile "/home/dorirefa/front.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+Options -MultiViews
+
+# Custom 404 Error Page pointing to /index.html with true HTTP 404 status
+ErrorDocument 404 /index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Do not rewrite /api requests (let Node.js / Passenger handle them)
+    RewriteCond %{REQUEST_URI} ^/api
+    RewriteRule ^ - [L]
+
+    # Serve existing files directly (CSS, JS, images, etc.)
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Serve existing directories directly
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Clean SSG URLs: serve path/index.html if it exists
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+    RewriteRule ^(.*)$ $1/index.html [L]
+
+    # Clean SSG URLs: serve path.html if it exists
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # Non-existent routes: return HTTP 404 status (Apache/LiteSpeed triggers ErrorDocument 404 -> /index.html)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ - [R=404,L]
+</IfModule>
+
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+SetEnv RAYON_NUM_THREADS 1
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END

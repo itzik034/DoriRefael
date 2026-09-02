@@ -12,6 +12,7 @@ export function About() {
                 description="למדו על דורי רפאל, מומחה לטיפולי כף רגל ופדיקור רפואי קליני ושיקומי בתל אביב עם מעל 20 שנות ניסיון מקצועי."
                 keywords="אודות דורי רפאל, פדיקוריסט רפואי תל אביב, מומחה כף רגל, הכשרה פודיאטריה"
                 canonical="/about"
+                ogImage={doriProfileImage}
             />
             <div className="about__container">
                 <header className="about__header">

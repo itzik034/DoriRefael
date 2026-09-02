@@ -11,6 +11,9 @@ export function EnglishPage() {
                 keywords="Medical Pedicure Tel Aviv, Podiatry Tel Aviv, Dori Refael, Ingrown Toenail Treatment, Fungal Nail Care"
                 canonical="/en"
                 ogLocale="en_US"
+                ogImage={DoriProfile}
+                lang="en"
+                dir="ltr"
             />
             <header className="english__header">
                 <div className="english__header-content">
