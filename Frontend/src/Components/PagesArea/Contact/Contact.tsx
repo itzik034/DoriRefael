@@ -26,11 +26,6 @@ export function Contact() {
         }
 
         setErrors(newErrors);
-
-        if (isValid) {
-            // Proceed with form submission logic
-            console.log('Form submitted', { nameVal, phoneVal, messageVal });
-        }
     };
 
     return (
